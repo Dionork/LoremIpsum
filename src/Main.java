@@ -22,17 +22,13 @@ public class Main {
                 }
             }
         }
-        int max = -1;
+        Main.maximum(map);
+        Main.minimum(map);
+    }
 
-        for (Map.Entry<Character, Integer> kv : map.entrySet()) {
-            if (max < kv.getValue()) {
-                max = kv.getValue();
-                ch = kv.getKey();
-
-            }
-        }
-        System.out.println("Максимальное значение: " + ch + ", равное " + max);
+    public static void minimum(Map<Character, Integer> map) {
         int min = Integer.MAX_VALUE;
+        char ch = 0;
         for (Map.Entry<Character, Integer> kv : map.entrySet()) {
             if (min > kv.getValue()) {
                 min = kv.getValue();
@@ -40,5 +36,17 @@ public class Main {
             }
         }
         System.out.println("Минимальное значение: " + ch + ", равное " + min);
+    }
+
+    public static void maximum(Map<Character, Integer> map) {
+        char ch = 0;
+        int max = -1;
+        for (Map.Entry<Character, Integer> kv : map.entrySet()) {
+            if (max < kv.getValue()) {
+                max = kv.getValue();
+                ch = kv.getKey();
+            }
+        }
+        System.out.println("Максимальное значение: " + ch + ", равное " + max);
     }
 }
